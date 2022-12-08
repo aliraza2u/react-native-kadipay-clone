@@ -1,7 +1,10 @@
 import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
-  homeWrapper: {
-    backgroundColor: 'red',
+  homeWrapper: {},
+  creditCard: {
+    marginTop: 40,
+    marginLeft: 40,
+    marginRight: 40,
   },
 });
