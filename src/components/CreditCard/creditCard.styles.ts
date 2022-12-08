@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
     borderRadius: 12,
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 24,
+    padding: 30,
   },
   title: {
     color: '#fff',
@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 24,
     fontWeight: '700',
-    marginVertical: 16,
+    marginVertical: 20,
   },
   barWrapper: {
     width: '100%',
