@@ -16,7 +16,7 @@ export const styles = StyleSheet.create({
   },
   shopTitle: {
     color: '#fff',
-    fontSize: 24,
+    fontSize: 28,
     fontWeight: '700',
     textAlign: 'center',
     marginBottom: 20,
@@ -40,5 +40,9 @@ export const styles = StyleSheet.create({
     color: '#4c5ec3',
     fontSize: 18,
     fontWeight: '700',
+  },
+  categories: {
+    marginVertical: 30,
+    marginLeft: 20,
   },
 });

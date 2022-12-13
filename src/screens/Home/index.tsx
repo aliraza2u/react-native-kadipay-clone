@@ -6,6 +6,12 @@ import Header from '../../components/Header';
 import {styles} from './home.styles';
 import shopOnlineImage from '../../asset/images/shop-online-bg.png';
 import CustomButton from '../../components/CustomButton';
+import bagsImage from '../../asset/images/categories/bags.png';
+import clothesImage from '../../asset/images/categories/clothes.png';
+import hatsImage from '../../asset/images/categories/hats.png';
+import pantsImage from '../../asset/images/categories/pants.png';
+import shoesImage from '../../asset/images/categories/shoes.png';
+import CategoryItem from '../../components/CategoryItem';
 
 const Home: FC<
   PropsWithChildren<{navigation: {navigate: (route: string) => void}}>
@@ -30,13 +36,26 @@ const Home: FC<
         </View>
         <View style={styles.shopButtonWrapper}>
           <CustomButton
-            title={'Explore Our Partners'}
             btnStyles={styles.shopButton}
             textStyles={styles.buttonText}
-            onPress={() => navigation.navigate('Profile')}
-          />
+            onPress={() => navigation.navigate('Profile')}>
+            Explore Our Partners
+          </CustomButton>
         </View>
       </ImageBackground>
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={styles.categories}>
+        {categories.map(category => (
+          <CategoryItem
+            key={category.id}
+            title={category.name}
+            color={category.color}
+            image={category.image}
+          />
+        ))}
+      </ScrollView>
       <Button
         title="Profile Screen"
         onPress={() => navigation.navigate('Profile')}
@@ -46,3 +65,49 @@ const Home: FC<
 };
 
 export default Home;
+
+export const categoriesColors = {
+  jaggedIce: '#B9E7DF',
+  rajah: '#F6C575',
+  indigo: '#4E61BD',
+  terraCota: '#DE715A',
+  moonRaker: '#CDC0EE',
+};
+export const categories = [
+  {
+    id: 1,
+    name: 'Clothes',
+    image: clothesImage,
+    color: categoriesColors.jaggedIce,
+  },
+  {
+    id: 2,
+    name: 'Shoes',
+    image: shoesImage,
+    color: categoriesColors.rajah,
+  },
+  {
+    id: 3,
+    name: 'Bags',
+    image: bagsImage,
+    color: categoriesColors.indigo,
+  },
+  {
+    id: 4,
+    name: 'Hats',
+    image: hatsImage,
+    color: categoriesColors.terraCota,
+  },
+  {
+    id: 5,
+    name: 'Pants',
+    image: pantsImage,
+    color: categoriesColors.moonRaker,
+  },
+  {
+    id: 6,
+    name: 'Belts',
+    image: hatsImage,
+    color: categoriesColors.indigo,
+  },
+];
