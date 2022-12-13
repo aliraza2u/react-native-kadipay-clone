@@ -4,14 +4,10 @@ import {ScrollView} from 'react-native-gesture-handler';
 import CreditCard from '../../components/CreditCard';
 import Header from '../../components/Header';
 import {styles} from './home.styles';
-import shopOnlineImage from '../../asset/images/shop-online-bg.png';
 import CustomButton from '../../components/CustomButton';
-import bagsImage from '../../asset/images/categories/bags.png';
-import clothesImage from '../../asset/images/categories/clothes.png';
-import hatsImage from '../../asset/images/categories/hats.png';
-import pantsImage from '../../asset/images/categories/pants.png';
-import shoesImage from '../../asset/images/categories/shoes.png';
 import CategoryItem from '../../components/CategoryItem';
+import {AssetImages, brandImagesList} from '../../asset';
+import BrandGrid from '../../components/BrandGrid';
 
 const Home: FC<
   PropsWithChildren<{navigation: {navigate: (route: string) => void}}>
@@ -25,7 +21,7 @@ const Home: FC<
         <CreditCard title={'Credit Limit'} content={'0.00 SAR'} />
       </View>
       <ImageBackground
-        source={shopOnlineImage}
+        source={AssetImages.shopOnlineImage}
         resizeMode={'cover'}
         style={styles.shopOnlineWrapper}>
         <View>
@@ -56,6 +52,11 @@ const Home: FC<
           />
         ))}
       </ScrollView>
+      <View style={styles.brandImagesWrapper}>
+        {brandImagesList.map(item => (
+          <BrandGrid key={item} image={item} />
+        ))}
+      </View>
       <Button
         title="Profile Screen"
         onPress={() => navigation.navigate('Profile')}
@@ -77,37 +78,37 @@ export const categories = [
   {
     id: 1,
     name: 'Clothes',
-    image: clothesImage,
+    image: AssetImages.clothesImage,
     color: categoriesColors.jaggedIce,
   },
   {
     id: 2,
     name: 'Shoes',
-    image: shoesImage,
+    image: AssetImages.shoesImage,
     color: categoriesColors.rajah,
   },
   {
     id: 3,
     name: 'Bags',
-    image: bagsImage,
+    image: AssetImages.bagsImage,
     color: categoriesColors.indigo,
   },
   {
     id: 4,
     name: 'Hats',
-    image: hatsImage,
+    image: AssetImages.hatsImage,
     color: categoriesColors.terraCota,
   },
   {
     id: 5,
     name: 'Pants',
-    image: pantsImage,
+    image: AssetImages.pantsImage,
     color: categoriesColors.moonRaker,
   },
   {
     id: 6,
     name: 'Belts',
-    image: hatsImage,
+    image: AssetImages.hatsImage,
     color: categoriesColors.indigo,
   },
 ];

@@ -45,4 +45,13 @@ export const styles = StyleSheet.create({
     marginVertical: 30,
     marginLeft: 20,
   },
+  brandImagesWrapper: {
+    flex: 1,
+    flexDirection: 'row',
+    width: '100%',
+    padding: 12,
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+    paddingHorizontal: 40,
+  },
 });
